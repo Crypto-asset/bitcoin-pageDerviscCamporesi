@@ -1005,6 +1005,27 @@ linear-gradient(
 
 
 }
+.eth-fill {
+
+height:100%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-weight:700;
+
+background:
+
+linear-gradient(
+90deg,
+#627eea,
+#3c4fe0
+);
+
+}
 /* ================================
    Floating Bitcoin
 ================================ */

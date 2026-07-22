@@ -9,7 +9,7 @@
 ================================ */
 
 const portfolioBTC = 31.06;
-
+const portfolioETH = 354.15;
 
 
 
@@ -77,7 +77,8 @@ document.querySelector("#walletValue");
 
 const btcBalance =
 document.querySelector("#btcBalance");
-
+const ethBalance =
+document.querySelector("#ethBalance");
 
 const btcPrice =
 document.querySelector("#btcPrice");
@@ -175,8 +176,26 @@ try {
 
     // Calculate portfolio
 
-    const totalUSD =
-    portfolioBTC * btcUSD;
+const ethResponse =
+await fetch(
+"https://api.kraken.com/0/public/Ticker?pair=ETHUSD"
+);
+
+
+const ethData =
+await ethResponse.json();
+
+
+const ethUSD =
+Number(
+    ethData.result.XETHZUSD.c[0]
+);
+
+
+
+const totalUSD =
+(portfolioBTC * btcUSD) +
+(portfolioETH * ethUSD);
 
 
     const totalEUR =
@@ -250,7 +269,12 @@ btcPrice.textContent =
 "Unavailable";
 
 }
+if(ethBalance){
 
+    ethBalance.textContent =
+    portfolioETH.toFixed(2) + " ETH";
+
+}
 
 
 if(eurValue){

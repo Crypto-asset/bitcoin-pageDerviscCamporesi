@@ -865,3 +865,255 @@ loginMessage.textContent =
 
 
 }
+
+
+
+￼
+Crs
+(17:47) /* ===================================
+   Bitcoin Vault Dashboard
+   Part 2
+=================================== */
+
+/* ================================
+   Toast System
+================================ */
+
+const toast = document.querySelector("#toast&quot￼;
+
+function showToast(message) {
+
+    if (!toast) return;
+
+    toast.textContent = message;
+
+    toast.classList.add("show&quot￼;
+
+    setTimeout(() => {
+        toast.classList.remove("show&quot￼;
+    }, 2500);
+
+}
+
+/* ================================
+   Copy Wallet
+================================ */
+
+const copyButton =
+document.querySelector("#copyWallet&quot￼;
+
+const wallet =
+document.querySelector("#walletAddress&quot￼;
+
+if (copyButton && wallet) {
+
+    copyButton.addEventListener("click", async () => {
+
+        try {
+
+            await navigator.clipboard.writeText(
+                wallet.textContent.trim()
+           &nbsp￼;
+
+            copyButton.textContent = "Copied ✓";
+
+            showToast(
+                "Wallet address copied"
+           &nbsp￼;
+
+            setTimeout(() => {
+                copyButton.textContent = "Copy Wallet";
+            }, 2000);
+
+        }
+
+        catch {
+
+            showToast(
+                "Copy failed"
+           &nbsp￼;
+
+        }
+
+    });
+
+}
+
+/* ================================
+   Synchronization Time
+================================ */
+
+const sync =
+document.querySelector("#syncTime&quot￼;
+
+function updateTime() {
+
+    if (sync) {
+
+        sync.textContent =
+        new Date().toLocaleString();
+
+    }
+
+}
+
+updateTime();
+
+setInterval(
+    updateTime,
+    60000
+);
+
+/* ================================
+   Security Score Animation
+================================ */
+
+const security =
+document.querySelector(".security&quot￼;
+
+if (security) {
+
+    let score = 0;
+
+    const target = 98;
+
+    const animation =
+    setInterval(() => {
+
+        score++;
+
+        security.textContent =
+        score + "%";
+
+        if (score >= target) {
+
+            clearInterval(animation);
+
+        }
+
+    }, 18);
+
+}
+
+/* ================================
+   Premium Card Glow
+================================ */
+
+const cards =
+document.querySelectorAll(".card&quot￼;
+
+cards.forEach(card => {
+
+    card.addEventListener(
+        "mousemove",
+        ￼ => {
+
+            const rect =
+            card.getBoundingClientRect();
+
+            const x =
+            e.clientX - rect.left;
+
+            const y =
+            e.clientY - rect.top;
+
+            card.style.background =
+            `radial-gradient(
+                circle at ${x}px ${y}px,
+                rgba(255,183,0,.22),
+                rgba(255,255,255,.08)
+           &nbsp￼`;
+
+        }
+   &nbsp￼;
+
+    card.addEventListener(
+        "mouseleave",
+        () => {
+
+            card.style.background =
+            "rgba(255,255,255,.08)";
+
+        }
+   &nbsp￼;
+
+});
+
+/* ================================
+   Status Pulse
+================================ */
+
+const status =
+document.querySelector(".status&quot￼;
+
+if (status) {
+
+    setInterval(() => {
+
+        status.style.transform =
+        "scale(1.03)";
+
+        setTimeout(() => {
+
+            status.style.transform =
+            "scale(1)";
+
+        }, 300);
+
+    }, 3000);
+
+}
+
+/* ================================
+   English / Italian Translator
+================================ */
+
+const languageBtn =
+document.querySelector("#languageBtn&quot￼;
+
+let italianMode = false;
+
+if (languageBtn) {
+
+    languageBtn.addEventListener(
+        "click",
+        () => {
+
+            italianMode = !italianMode;
+
+            document
+            .querySelectorAll("[data-en]&quot￼
+            .forEach(element => {
+
+                element.textContent =
+                italianMode
+                    ? element.dataset.it
+                    : element.dataset.en;
+
+            });
+
+            languageBtn.textContent =
+            italianMode
+                ? "🇬🇧 English"
+                : "🇮🇹 Italiano";
+
+        }
+   &nbsp￼;
+
+}
+
+/* ================================
+   Page Loaded
+================================ */
+
+window.addEventListener(
+    "load",
+    () => {
+
+        document.body.classList.add(
+            "ready"
+       &nbsp￼;
+
+    }
+);
+

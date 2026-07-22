@@ -90,12 +90,9 @@ document.querySelector("#btcAllocation");
 
 const ethAllocation =
 document.querySelector("#ethAllocation");
-const btcAllocation =
-document.querySelector("#btcAllocation");
 
 
-const ethAllocation =
-document.querySelector("#ethAllocation");
+
 const eurValue =
 document.querySelector("#eurValue");
 

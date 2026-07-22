@@ -82,8 +82,14 @@ document.querySelector("#ethBalance");
 
 const btcPrice =
 document.querySelector("#btcPrice");
+const ethPrice =
+document.querySelector("#ethPrice");
+const btcAllocation =
+document.querySelector("#btcAllocation");
 
 
+const ethAllocation =
+document.querySelector("#ethAllocation");
 const eurValue =
 document.querySelector("#eurValue");
 
@@ -190,14 +196,55 @@ const ethUSD =
 Number(
     ethData.result.XETHZUSD.c[0]
 );
+if(ethPrice){
 
+    ethPrice.textContent =
+    "$" +
+    ethUSD.toLocaleString(
+        undefined,
+        {
+            maximumFractionDigits:2
+        }
+    );
+
+}
 
 
 const totalUSD =
 (portfolioBTC * btcUSD) +
 (portfolioETH * ethUSD);
+const btcValue =
+portfolioBTC * btcUSD;
 
 
+const ethValue =
+portfolioETH * ethUSD;
+
+
+const btcPercent =
+(btcValue / totalUSD) * 100;
+
+
+const ethPercent =
+(ethValue / totalUSD) * 100;
+if(btcAllocation){
+
+btcAllocation.textContent =
+"BTC " +
+btcPercent.toFixed(1) +
+"%";
+
+}
+
+
+if(ethAllocation){
+
+ethAllocation.textContent =
+"ETH " +
+ethPercent.toFixed(1) +
+"%";
+
+}
     const totalEUR =
     totalUSD * usdToEUR;
 

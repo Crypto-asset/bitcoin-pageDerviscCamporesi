@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>
+Bitcoin Vault Dashboard | Digital Asset Portfolio
+</title>
+
+
+<meta name="description"
+content="A premium Bitcoin portfolio dashboard showing blockchain status, wallet information, security score and digital asset analytics.">
+
+
+<meta name="keywords"
+content="Bitcoin, cryptocurrency, blockchain, wallet dashboard, BTC portfolio">
+
+
+<meta name="author"
+content="Dervisc Camporesi">
+
+
+<meta name="theme-color"
+content="#ffb700">
+
+
+<link rel="icon"
+href="assets/bitcoin.svg">
+
+
+<link rel="stylesheet"
+href="style.css">
+
+
+</head>
+
+
+
+<body>
+
+
+
+<!-- LOGIN SCREEN -->
+
+<div id="loginScreen">
+
+
+<div class="login-box">
+
+
+<div class="login-logo">
+
+₿
+
+</div>
+
+
+
+<h1>
+
+Bitcoin Vault
+
+</h1>
+
+
+
+<p>
+
+Private Access
+
+</p>
+
+
+
+<input
+id="loginEmail"
+type="email"
+placeholder="Email">
+
+
+
+<input
+id="loginPassword"
+type="password"
+placeholder="Password">
+
+
+
+<button
+id="loginButton"
+class="btn btn-primary">
+
+Login
+
+</button>
+
+
+
+<p id="loginMessage"></p>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div id="particles"></div>
+
+
+
+
+
+<div class="dashboard">
+
+
+
+
+
+<header class="header">
+
+
+
+
+
+<div class="logo-area">
+
+
+
+<div class="logo">
+
+₿
+
+</div>
+
+
+
+
+<div>
+
+
+<h1>
+
+Bitcoin Vault
+
+</h1>
+
+
+
+<p>
+
+Digital Asset Management Dashboard
+
+</p>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="header-actions">
+
+
+
+
+
+<button id="languageBtn"
+class="btn btn-secondary">
+
+🇮🇹 Italiano
+
+</button>
+
+
+
+
+
+
+
+<div class="status">
+
+
+<span class="status-dot"></span>
+
+
+
+
+<span data-en="Blockchain Connected"
+data-it="Blockchain Connessa">
+
+Blockchain Connected
+
+</span>
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+</header>
+
+
+
+
+
+
+
+
+
+<main class="cards">
+
+
+
+
+
+
+
+<section class="card">
+
+
+
+<p class="balance-title">
+
+
+<span data-en="Total Portfolio Balance"
+data-it="Valore Totale Portafoglio">
+
+Total Portfolio Balance
+
+</span>
+
+
+</p>
+
+
+
+
+
+<div class="balance"
+id="walletValue">
+
+Loading...
+
+</div>
+
+
+
+
+
+<span class="currency">
+
+USD
+
+</span>
+
+
+
+
+
+
+<p class="btc-holdings">
+
+
+<span data-en="BTC Holdings:"
+data-it="Possesso BTC:">
+
+BTC Holdings:
+
+</span>
+
+
+
+<strong id="btcBalance">
+
+31.06 BTC
+
+</strong>
+
+
+
+</p>
+
+
+
+
+
+
+
+<p class="btc-holdings">
+
+
+<span data-en="EUR Value:"
+data-it="Valore EUR:">
+
+EUR Value:
+
+</span>
+
+
+
+<strong id="eurValue">
+
+Loading...
+
+</strong>
+
+
+
+</p>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section class="card owner">
+
+
+
+<p class="balance-title">
+
+
+
+<span data-en="Wallet Owner"
+data-it="Proprietario Wallet">
+
+Wallet Owner
+
+</span>
+
+
+
+</p>
+
+
+
+
+
+<div class="owner-name">
+
+Dervisc Camporesi
+
+</div>
+
+
+
+
+
+<p>
+
+Premium Bitcoin Holder
+
+</p>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section class="card">
+
+
+
+<p class="balance-title">
+
+
+
+<span data-en="Wallet Information"
+data-it="Informazioni Wallet">
+
+Wallet Information
+
+</span>
+
+
+
+</p>
+
+
+
+
+
+
+
+<div id="walletAddress"
+class="wallet-address">
+
+
+bc1qamgjuxaywqls56h7rg7afga3m6rgqwfkew688k
+
+
+</div>
+
+
+
+
+
+
+<div class="buttons">
+
+
+
+<button id="copyWallet"
+class="btn btn-primary">
+
+
+Copy Wallet
+
+
+</button>
+
+
+
+
+
+<button class="btn btn-secondary">
+
+
+Share
+
+
+</button>
+
+
+
+
+
+<a href="https://wa.me/447918892797"
+target="_blank"
+class="btn btn-whatsapp">
+
+
+WhatsApp Contact
+
+
+</a>
+
+
+
+
+
+</div>
+
+
+
+
+
+</section>
+ 
+<section class="card">
+
+
+<h2>
+
+
+<span data-en="Portfolio Statistics"
+data-it="Statistiche Portafoglio">
+
+Portfolio Statistics
+
+</span>
+
+
+</h2>
+
+
+
+
+
+<div class="stats">
+
+
+
+
+
+
+<div>
+
+
+<span>
+
+BTC Price
+
+</span>
+
+
+
+
+<strong id="btcPrice">
+
+Loading...
+
+</strong>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<div>
+
+
+<span>
+
+Network
+
+</span>
+
+
+
+
+<strong>
+
+Bitcoin Mainnet
+
+</strong>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<div>
+
+
+<span>
+
+Security Score
+
+</span>
+
+
+
+
+<strong class="security">
+
+98%
+
+</strong>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section class="card">
+
+
+<h2>
+
+
+<span data-en="Portfolio Allocation"
+data-it="Allocazione Portafoglio">
+
+Portfolio Allocation
+
+</span>
+
+
+</h2>
+
+
+
+
+
+
+
+<div class="chart">
+
+
+
+<div class="btc-fill">
+
+
+100% BTC
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section class="card">
+
+
+<h2>
+
+
+<span data-en="System Status"
+data-it="Stato Sistema">
+
+
+System Status
+
+
+</span>
+
+
+</h2>
+
+
+
+
+
+
+
+<p>
+
+
+<span data-en="Last Synchronization:"
+data-it="Ultima Sincronizzazione:">
+
+
+Last Synchronization:
+
+
+</span>
+
+
+</p>
+
+
+
+
+
+
+
+<strong id="syncTime">
+
+
+Loading...
+
+
+</strong>
+
+
+
+
+
+
+
+
+<p class="network">
+
+
+
+<span data-en="Network Status:"
+data-it="Stato Rete:">
+
+
+Network Status:
+
+
+</span>
+
+
+
+
+
+<span>
+
+
+Online
+
+
+</span>
+
+
+
+
+
+</p>
+
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+</main>
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+
+
+
+<p>
+
+
+© 2026 Bitcoin Vault Dashboard
+
+
+</p>
+
+
+
+
+
+<p>
+
+
+Secure • Decentralized • Blockchain Powered
+
+
+</p>
+
+
+
+
+</footer>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="floating-bitcoin">
+
+
+₿
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div id="toast"
+class="toast">
+
+
+Wallet copied successfully
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<script src="app.js"></script>
+
+
+
+
+
+</body>
+
+
+</html>

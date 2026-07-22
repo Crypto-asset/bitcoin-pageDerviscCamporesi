@@ -1,202 +1,245 @@
 /* ===================================
    Bitcoin Vault Dashboard
-   Milestone 4 Final Style Sheet
-   WhatsApp Button Edition
+   Clean Style Sheet - Part 1
 =================================== */
 
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
-
+/* ================================
+   Reset
+================================ */
 
 * {
-
-margin:0;
-
-padding:0;
-
-box-sizing:border-box;
-
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
-
-
 
 html {
-
-scroll-behavior:smooth;
-
+    scroll-behavior: smooth;
 }
-
-
-
 
 
 body {
 
+    min-height: 100vh;
 
-min-height:100vh;
+    font-family: "Inter", sans-serif;
 
+    color: white;
 
-font-family:"Inter",sans-serif;
+    overflow-x: hidden;
 
+    padding: 30px;
 
-color:white;
+    background:
+    radial-gradient(
+        circle at top left,
+        #203a63,
+        transparent 40%
+   &nbsp￼,
+    radial-gradient(
+        circle at bottom right,
+        #5a3000,
+        transparent 35%
+   &nbsp￼,
+    #050505;
 
-
-overflow-x:hidden;
-
-
-background:
-
-
-radial-gradient(
-circle at top left,
-#203a63,
-transparent 40%
-),
-
-
-radial-gradient(
-circle at bottom right,
-#5a3000,
-transparent 35%
-),
-
-
-#050505;
-
-
-padding:30px;
-
-
-animation:
-
-pageEntrance 1s ease;
-
-
+    animation: pageEntrance 1s ease;
 
 }
-
-
-
-
-
 
 
 @keyframes pageEntrance {
 
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
 
-from {
-
-opacity:0;
-
-transform:translateY(20px);
-
-}
-
-
-to {
-
-opacity:1;
-
-transform:translateY(0);
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 
 }
-
-
-}
-
-
-
-
-
-
 
 
 /* ================================
-   Particle Background
+   Particles
 ================================ */
-
 
 #particles {
 
+    position: fixed;
 
-position:fixed;
+    inset: 0;
 
+    overflow: hidden;
 
-inset:0;
-
-
-overflow:hidden;
-
-
-z-index:-1;
-
+    z-index: -1;
 
 }
-
-
 
 
 .particle {
 
+    position: absolute;
 
-position:absolute;
+    width: 4px;
 
+    height: 4px;
 
-width:4px;
+    background: #ffb700;
 
+    border-radius: 50%;
 
-height:4px;
-
-
-background:#ffb700;
-
-
-border-radius:50%;
-
-
-opacity:.5;
-
-
-animation:
-
-particleMove linear infinite;
-
+    animation:
+    particleMove linear infinite;
 
 }
-
-
-
-
-
 
 
 @keyframes particleMove {
 
+    from {
+        transform: translateY(100vh);
+    }
 
-from {
-
-transform:translateY(100vh);
-
-}
-
-
-to {
-
-transform:translateY(-10vh);
+    to {
+        transform: translateY(-10vh);
+    }
 
 }
 
 
+/* ================================
+   Login Screen
+================================ */
+
+
+#loginScreen {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: #000;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 99999;
+
 }
 
 
 
+.login-box {
+
+    width: 350px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    border:
+    1px solid rgba(255,255,255,.2);
+
+    backdrop-filter: blur(20px);
+
+}
 
 
 
+.login-logo {
+
+    width: 70px;
+
+    height: 70px;
+
+    margin: auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    font-size:40px;
+
+    font-weight:800;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ffb700,
+        #ff7a00
+   &nbsp￼;
+
+}
+
+
+
+.login-box h1 {
+
+    margin-top:20px;
+
+}
+
+
+.login-box p {
+
+    color:#aaa;
+
+    margin-bottom:20px;
+
+}
+
+
+.login-box input {
+
+    width:100%;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    outline:none;
+
+    background:#111;
+
+    color:white;
+
+    font-size:16px;
+
+}
+
+
+#loginMessage {
+
+    color:#ff5555;
+
+}
+
+
+body.logged-in #loginScreen {
+
+    display:none;
+
+}
 
 
 
@@ -207,24 +250,13 @@ transform:translateY(-10vh);
 
 .dashboard {
 
+    max-width:1200px;
 
-max-width:1200px;
+    width:100%;
 
-
-width:100%;
-
-
-margin:auto;
-
+    margin:auto;
 
 }
-
-
-
-
-
-
-
 
 
 /* ================================
@@ -234,235 +266,209 @@ margin:auto;
 
 .header {
 
+    display:flex;
 
-display:flex;
+    justify-content￼pace-between;
 
+    align-items:center;
 
-justify-content:space-between;
+    padding:25px 30px;
 
+    margin-bottom:30px;
 
-align-items:center;
+    border-radius:25px;
 
+    background:
+    rgba(255,255,255,.08);
 
-padding:25px 30px;
+    border:
+    1px solid rgba(255,255,255,.15);
 
-
-margin-bottom:30px;
-
-
-background:
-
-
-rgba(255,255,255,.08);
-
-
-border:
-
-
-1px solid rgba(255,255,255,.15);
-
-
-border-radius:25px;
-
-
-backdrop-filter:blur(25px);
-
-
-box-shadow:
-
-
-0 20px 50px rgba(0,0,0,.25);
-
-
+    backdrop-filter:blur(25px);
 
 }
-
-
-
-
 
 
 
 .logo-area {
 
+    display:flex;
 
-display:flex;
+    align-items:center;
 
-
-align-items:center;
-
-
-gap:15px;
-
+    gap:15px;
 
 }
-
-
-
-
 
 
 
 .logo {
 
+    width:60px;
 
-width:60px;
+    height:60px;
 
+    display:flex;
 
-height:60px;
+    justify-content:center;
 
+    align-items:center;
 
-display:flex;
+    border-radius:50%;
 
+    font-size:35px;
 
-justify-content:center;
+    font-weight:800;
 
+    background:
+    linear-gradient(
+        135deg,
+        #ffb700,
+        #ff7a00
+   &nbsp￼;
 
-align-items:center;
-
-
-border-radius:50%;
-
-
-font-size:35px;
-
-
-font-weight:800;
-
-
-background:
-
-
-linear-gradient(
-135deg,
-#ffb700,
-#ff7a00
-);
-
-
-box-shadow:
-
-
-0 0 40px rgba(255,183,0,.5);
-
+    box-shadow:
+    0 0 40px rgba(255,183,0,.5);
 
 }
-
-
-
-
 
 
 
 .header h1 {
 
-
-font-size:28px;
-
+    font-size:28px;
 
 }
-
-
-
 
 
 .header p {
 
+    color:#aaa;
 
-color:#aaa;
+}
 
 
-font-size:14px;
+/* ================================
+   Header Actions
+================================ */
 
+
+.header-actions {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+
+/* ================================
+   Buttons
+================================ */
+
+
+.btn {
+
+    padding:14px 25px;
+
+    border:none;
+
+    border-radius:14px;
+
+    cursor￼ointer;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+
+.btn:hover {
+
+    transform:translateY(-4px);
 
 }
 
 
 
+.btn-primary {
+
+    color:white;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ffb700,
+        #ff7a00
+   &nbsp￼;
+
+}
 
 
 
+.btn-secondary {
 
+    color:white;
+
+    background:
+    rgba(255,255,255,.12);
+
+    border:
+    1px solid rgba(255,255,255,.2);
+
+}
+/* ===================================
+   Bitcoin Vault Dashboard
+   Clean Style Sheet - Part 2
+=================================== */
 
 
 /* ================================
    Status
 ================================ */
 
-
 .status {
 
+    display:flex;
 
-display:flex;
+    align-items:center;
 
+    gap:10px;
 
-align-items:center;
+    padding:12px 20px;
 
+    border-radius:50px;
 
-gap:10px;
+    background:
+    rgba(0,255,140,.12);
 
+    border:
+    1px solid rgba(0,255,140,.3);
 
-padding:12px 20px;
+    color:#00ff8c;
 
-
-border-radius:50px;
-
-
-background:
-
-
-rgba(0,255,140,.12);
-
-
-border:
-
-
-1px solid rgba(0,255,140,.3);
-
-
-color:#00ff8c;
-
-
-font-weight:600;
-
+    font-weight:600;
 
 }
-
-
-
-
-
 
 
 .status-dot {
 
+    width:11px;
 
-width:11px;
+    height:11px;
 
+    background:#00ff8c;
 
-height:11px;
+    border-radius:50%;
 
-
-background:#00ff8c;
-
-
-border-radius:50%;
-
-
-box-shadow:
-
-
-0 0 15px #00ff8c;
-
+    box-shadow:
+    0 0 15px #00ff8c;
 
 }
-
-
-
-
-
-
-
 
 
 /* ================================
@@ -472,124 +478,80 @@ box-shadow:
 
 .cards {
 
+    display:grid;
 
-display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
 
-
-grid-template-columns:
-
-
-repeat(
-auto-fit,
-minmax(280px,1fr)
-);
-
-
-gap:25px;
-
+    gap:25px;
 
 }
-
-
-
-
-
 
 
 
 .card {
 
+    padding:30px;
 
-padding:30px;
+    border-radius:25px;
 
+    background:
+    rgba(255,255,255,.08);
 
-border-radius:25px;
+    border:
+    1px solid rgba(255,255,255,.15);
 
+    backdrop-filter:blur(25px);
 
-background:
+    transition:.35s;
 
-
-rgba(255,255,255,.08);
-
-
-border:
-
-
-1px solid rgba(255,255,255,.15);
-
-
-backdrop-filter:blur(25px);
-
-
-transition:.35s;
-
-
-animation:
-
-
-cardEntrance .8s ease forwards;
-
-
+    animation:
+    cardEntrance .8s ease forwards;
 
 }
-
-
-
-
-
-
-
-@keyframes cardEntrance {
-
-
-from {
-
-opacity:0;
-
-transform:translateY(40px);
-
-}
-
-
-to {
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-
-}
-
-
-
-
 
 
 
 .card:hover {
 
+    transform:
+    translateY(-10px);
 
-transform:
+    box-shadow:
+    0 25px 60px rgba(255,183,0,.25);
 
-
-translateY(-10px);
-
-
-box-shadow:
-
-
-0 25px 60px rgba(255,183,0,.25);
-
-
-border-color:
-
-
-rgba(255,183,0,.5);
-
+    border-color:
+    rgba(255,183,0,.5);
 
 }
+
+
+
+@keyframes cardEntrance {
+
+    from {
+
+        opacity:0;
+
+        transform:
+        translateY(40px);
+
+    }
+
+
+    to {
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+
+    }
+
+}
+
+
+
 /* ================================
    Balance
 ================================ */
@@ -597,48 +559,68 @@ rgba(255,183,0,.5);
 
 .balance-title {
 
+    color:#aaa;
 
-color:#aaa;
-
-
-margin-bottom:15px;
-
+    margin-bottom:15px;
 
 }
-
 
 
 
 .balance {
 
+    font-size:55px;
 
-font-size:55px;
+    font-weight:800;
 
-
-font-weight:800;
-
-
-color:#ffb700;
-
+    color:#ffb700;
 
 }
-
-
 
 
 .currency {
 
-
-font-size:18px;
-
+    font-size:18px;
 
 }
 
 
 
+.btc-holdings {
+
+    margin-top:15px;
+
+    color:#aaa;
+
+}
 
 
+#btcBalance,
+#ethBalance {
 
+    color:#ffb700;
+
+    font-weight:700;
+
+}
+
+
+/* ================================
+   Owner
+================================ */
+
+
+.owner-name {
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#ffb700;
+
+    margin:20px 0;
+
+}
 
 
 
@@ -649,192 +631,57 @@ font-size:18px;
 
 .wallet-address {
 
+    margin-top:20px;
 
-margin-top:20px;
+    padding:15px;
 
+    border-radius:12px;
 
-padding:15px;
+    background:
+    rgba(0,0,0,.35);
 
+    color:#ddd;
 
-border-radius:12px;
-
-
-background:
-
-
-rgba(0,0,0,.35);
-
-
-color:#ddd;
-
-
-word-break:break-all;
-
+    word-break:break-all;
 
 }
-
-
-
-
 
 
 
 .buttons {
 
+    display:flex;
 
-display:flex;
+    gap:15px;
 
+    margin-top:25px;
 
-gap:15px;
-
-
-margin-top:25px;
-
-
-flex-wrap:wrap;
-
+    flex-wrap:wrap;
 
 }
 
-
-
-
-
-
-.btn {
-
-
-padding:14px 25px;
-
-
-border-radius:14px;
-
-
-border:none;
-
-
-cursor:pointer;
-
-
-font-weight:700;
-
-
-transition:.3s;
-
-
-}
-
-
-
-
-
-
-
-.btn-primary {
-
-
-background:
-
-
-linear-gradient(
-135deg,
-#ffb700,
-#ff7a00
-);
-
-
-color:white;
-
-
-}
-
-
-
-
-
-
-
-/* ================================
-   WhatsApp Button
-================================ */
 
 
 .btn-whatsapp {
 
+    background:
+    linear-gradient(
+        135deg,
+        #25D366,
+        #128C7E
+   &nbsp￼;
 
-background:
+    color:white;
 
+    text-decoration:none;
 
-linear-gradient(
-135deg,
-#25D366,
-#128C7E
-);
+    display:flex;
 
+    justify-content:center;
 
-color:white;
-
-
-text-decoration:none;
-
-
-display:flex;
-
-
-align-items:center;
-
-
-justify-content:center;
-
-
-min-width:150px;
-
-
-flex:1;
-
-
-border:
-
-
-1px solid rgba(255,255,255,.2);
-
+    align-items:center;
 
 }
-
-
-
-.btn-whatsapp:hover {
-
-
-transform:translateY(-4px);
-
-
-box-shadow:
-
-
-0 10px 25px rgba(37,211,102,.35);
-
-
-}
-
-
-
-
-
-.btn:hover {
-
-
-transform:translateY(-4px);
-
-
-}
-
-
-
-
-
-
-
 
 
 /* ================================
@@ -844,101 +691,62 @@ transform:translateY(-4px);
 
 .card h2 {
 
+    margin-bottom:20px;
 
-margin-bottom:20px;
-
-
-font-size:20px;
-
+    font-size:20px;
 
 }
-
-
-
 
 
 
 .stats {
 
+    display:flex;
 
-display:flex;
+    flex-direction:column;
 
-
-flex-direction:column;
-
-
-gap:18px;
-
+    gap:18px;
 
 }
-
-
-
-
 
 
 
 .stats div {
 
+    display:flex;
 
-display:flex;
+    justify-content￼pace-between;
 
+    padding-bottom:12px;
 
-justify-content:space-between;
-
-
-padding-bottom:12px;
-
-
-border-bottom:
-
-
-1px solid rgba(255,255,255,.1);
-
+    border-bottom:
+    1px solid rgba(255,255,255,.1);
 
 }
-
-
 
 
 
 .stats span {
 
-
-color:#aaa;
-
+    color:#aaa;
 
 }
-
-
 
 
 
 .stats strong {
 
-
-color:#ffb700;
-
+    color:#ffb700;
 
 }
-
-
 
 
 
 .security {
 
-
-color:#00ff8c!important;
-
+    color:#00ff8c!important;
 
 }
-
-
-
-
-
-
 
 
 
@@ -949,174 +757,62 @@ color:#00ff8c!important;
 
 .chart {
 
+    height:35px;
 
-height:35px;
+    background:
+    rgba(255,255,255,.1);
 
+    border-radius:50px;
 
-background:
-
-
-rgba(255,255,255,.1);
-
-
-border-radius:50px;
-
-
-overflow:hidden;
-
+    overflow:hidden;
 
 }
-
-
-
-
 
 
 
 .btc-fill {
 
+    height:100%;
 
-height:100%;
+    display:flex;
 
+    align-items:center;
 
-width:100%;
+    justify-content:center;
 
+    font-weight:700;
 
-display:flex;
-
-
-align-items:center;
-
-
-justify-content:center;
-
-
-font-weight:700;
-
-
-background:
-
-
-linear-gradient(
-90deg,
-#ffb700,
-#ff7a00
-);
-
+    background:
+    linear-gradient(
+        90deg,
+        #ffb700,
+        #ff7a00
+   &nbsp￼;
 
 }
+
+
+
 .eth-fill {
 
-height:100%;
+    height:100%;
 
-display:flex;
+    display:flex;
 
-align-items:center;
+    align-items:center;
 
-justify-content:center;
+    justify-content:center;
 
-font-weight:700;
+    font-weight:700;
 
-background:
-
-linear-gradient(
-90deg,
-#627eea,
-#3c4fe0
-);
-
-}
-/* ================================
-   Floating Bitcoin
-================================ */
-
-
-.floating-bitcoin {
-
-
-position:fixed;
-
-
-right:40px;
-
-
-bottom:40px;
-
-
-width:80px;
-
-
-height:80px;
-
-
-display:flex;
-
-
-justify-content:center;
-
-
-align-items:center;
-
-
-border-radius:50%;
-
-
-font-size:45px;
-
-
-font-weight:800;
-
-
-background:
-
-
-linear-gradient(
-135deg,
-#ffb700,
-#ff7a00
-);
-
-
-box-shadow:
-
-
-0 0 50px rgba(255,183,0,.6);
-
-
-animation:
-
-
-floatBitcoin 4s infinite;
-
-
+    background:
+    linear-gradient(
+        90deg,
+        #627eea,
+        #3c4fe0
+   &nbsp￼;
 
 }
-
-
-
-
-
-
-
-@keyframes floatBitcoin {
-
-
-50% {
-
-
-transform:translateY(-20px);
-
-
-}
-
-
-}
-
-
-
-
-
-
 
 
 
@@ -1127,75 +823,99 @@ transform:translateY(-20px);
 
 .toast {
 
+    position:fixed;
 
-position:fixed;
+    bottom:30px;
 
+    left:50%;
 
-bottom:30px;
+    transform:
+    translateX(-50%)
+    translateY(100px);
 
+    opacity:0;
 
-left:50%;
+    padding:15px 25px;
 
+    border-radius:50px;
 
-transform:
+    background:
+    rgba(20,20,20,.95);
 
-
-translateX(-50%)
-
-
-translateY(100px);
-
-
-opacity:0;
-
-
-padding:15px 25px;
-
-
-border-radius:50px;
-
-
-background:
-
-
-rgba(20,20,20,.95);
-
-
-transition:.4s;
-
-
+    transition:.4s;
 
 }
-
-
-
-
 
 
 
 .toast.show {
 
+    opacity:1;
 
-opacity:1;
-
-
-transform:
-
-
-translateX(-50%)
-
-
-translateY(0);
-
-
+    transform:
+    translateX(-50%)
+    translateY(0);
 
 }
 
 
 
+/* ================================
+   Floating Bitcoin
+================================ */
+
+
+.floating-bitcoin {
+
+    position:fixed;
+
+    right:40px;
+
+    bottom:40px;
+
+    width:80px;
+
+    height:80px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    font-size:45px;
+
+    font-weight:800;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ffb700,
+        #ff7a00
+   &nbsp￼;
+
+    box-shadow:
+    0 0 50px rgba(255,183,0,.6);
+
+    animation:
+    floatBitcoin 4s infinite;
+
+}
 
 
 
+@keyframes floatBitcoin {
+
+    50% {
+
+        transform:
+        translateY(-20px);
+
+    }
+
+}
 
 
 
@@ -1206,36 +926,20 @@ translateY(0);
 
 .footer {
 
+    margin-top:45px;
 
-margin-top:45px;
+    padding:25px;
 
+    text-align:center;
 
-padding:25px;
+    color:#aaa;
 
+    font-size:14px;
 
-text-align:center;
-
-
-color:#aaa;
-
-
-font-size:14px;
-
-
-border-top:
-
-
-1px solid rgba(255,255,255,.1);
-
-
+    border-top:
+    1px solid rgba(255,255,255,.1);
 
 }
-
-
-
-
-
-
 
 
 
@@ -1247,743 +951,69 @@ border-top:
 @media(max-width:700px){
 
 
-body {
+    body {
 
-
-padding:15px;
-
-
-}
-
-
-
-
-
-
-.header {
-
-
-flex-direction:column;
-
-
-align-items:flex-start;
-
-
-gap:20px;
-
-
-}
-
-
-
-
-
-
-.balance {
-
-
-font-size:40px;
-
-
-}
-
-
-
-
-
-
-.buttons {
-
-
-flex-direction:column;
-
-
-}
-
-
-
-
-
-
-.btn {
-
-
-width:100%;
-
-
-}
-
-
-
-
-
-
-.btn-whatsapp {
-
-
-width:100%;
-
-
-}
-
-
-
-
-
-
-.floating-bitcoin {
-
-
-width:60px;
-
-
-height:60px;
-
-
-font-size:35px;
-
-
-right:20px;
-
-
-bottom:20px;
-
-
-
-}
-
-
-
-}
-/* ===================================
-   Live Bitcoin Dashboard
-=================================== */
-
-.btc-holdings{
-    margin-top:15px;
-    color:#bfbfbf;
-    font-size:15px;
-}
-
-#btcAmount,
-#btcHoldings,
-#btcPrice{
-    color:#ffb700;
-    font-weight:700;
-}
-
-#portfolioValue{
-    transition:all .4s ease;
-}
-
-.price-up{
-    color:#00ff8c !important;
-    text-shadow:0 0 15px rgba(0,255,140,.45);
-}
-
-.price-down{
-    color:#ff5d5d !important;
-    text-shadow:0 0 15px rgba(255,80,80,.45);
-}
-
-.loading{
-    opacity:.6;
-}
-
-.live-dot{
-    display:inline-block;
-    width:10px;
-    height:10px;
-    margin-left:8px;
-    background:#00ff8c;
-    border-radius:50%;
-    animation:pulseLive 1.4s infinite;
-}
-
-@keyframes pulseLive{
-
-0%{
-transform:scale(.8);
-opacity:.5;
-}
-
-50%{
-transform:scale(1.2);
-opacity:1;
-}
-
-100%{
-transform:scale(.8);
-opacity:.5;
-}
-
-}
-
-.price-card{
-    display:flex;
-    flex-direction:column;
-    gap:8px;
-}
-
-.value-large{
-    font-size:56px;
-    font-weight:800;
-    color:#ffb700;
-}
-
-.value-small{
-    color:#bdbdbd;
-    font-size:16px;
-}
-
-.updated-time{
-    margin-top:12px;
-    color:#8d8d8d;
-    font-size:13px;
-}
-/* ===================================
-   Live Wallet Data
-=================================== */
-
-.btc-holdings {
-
-margin-top:15px;
-
-color:#aaa;
-
-font-size:15px;
-
-}
-
-
-#btcBalance {
-
-color:#ffb700;
-
-font-weight:700;
-
-}
-#ethBalance {
-    color:#ffb700;
-    font-weight:700;
-}
-
-
-#walletValue {
-
-transition:.4s ease;
-
-}
-
-
-
-#walletValue.loading,
-#btcBalance.loading,
-#btcPrice.loading {
-
-opacity:.6;
-
-}
-
-
-
-.live-update {
-
-animation:valueUpdate .5s ease;
-
-}
-
-
-
-@keyframes valueUpdate {
-
-
-0% {
-
-transform:scale(.95);
-
-opacity:.5;
-
-}
-
-
-100% {
-
-transform:scale(1);
-
-opacity:1;
-
-}
-
-
-}
-
-
-
-#btcPrice {
-
-color:#ffb700;
-
-font-weight:800;
-
-}
-
-
-
-.wallet-error {
-
-color:#ff5d5d!important;
-
-}
-/* ===================================
-   Live Wallet Data Display
-=================================== */
-
-.btc-holdings {
-    margin-top: 15px;
-    color: #aaa;
-    font-size: 15px;
-}
-
-#btcBalance {
-    color: #ffb700;
-    font-weight: 700;
-}
-
-#walletValue {
-    transition: 0.4s ease;
-}
-
-#btcPrice {
-    color: #ffb700;
-    font-weight: 800;
-}
-
-.live-update {
-    animation: valueUpdate 0.5s ease;
-}
-
-@keyframes valueUpdate {
-    0% {
-        transform: scale(0.95);
-        opacity: 0.5;
-    }
-
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-.loading {
-    opacity: 0.6;
-}
-
-.wallet-error {
-    color: #ff5d5d !important;
-}
-/* ===================================
-   Fix Large Portfolio Balance Width
-=================================== */
-
-.cards {
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-}
-
-
-.cards .card:first-child {
-    min-width: 0;
-}
-
-
-
-#walletValue {
-    font-size: clamp(28px, 4vw, 48px);
-    white-space: nowrap;
-    letter-spacing: -1px;
-}
-
-
-
-.balance {
-    overflow: visible;
-    width: 100%;
-}
-
-
-
-/* Make balance card wider on desktop */
-
-@media(min-width:900px){
-
-    .cards .card:first-child {
-        grid-column: span 2;
-    }
-
-}
-
-
-
-@media(max-width:700px){
-
-    #walletValue {
-
-        font-size:32px;
-        white-space:normal;
-        word-break:break-word;
+        padding:15px;
 
     }
 
 
-    .cards .card:first-child {
+    .header {
 
-        grid-column:span 1;
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:20px;
 
     }
 
-}
-/* ================================
-   Language Button
-================================ */
+
+    .header-actions {
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
 
 
-.header-actions {
+    .balance {
 
-display:flex;
+        font-size:40px;
 
-align-items:center;
-
-gap:15px;
-
-}
+    }
 
 
+    .buttons {
 
-#languageBtn {
+        flex-direction:column;
 
-cursor:pointer;
-
-}
-
+    }
 
 
-@media(max-width:700px){
+    .btn {
+
+        width:100%;
+
+    }
 
 
-.header-actions {
+    .floating-bitcoin {
 
-flex-direction:column;
+        width:60px;
 
-align-items:flex-start;
+        height:60px;
 
-}
+        right:20px;
 
+        bottom:20px;
 
-}
-/* ================================
-   Language Button Fix
-================================ */
+        font-size:35px;
 
-#languageBtn {
-
-cursor:pointer;
-
-margin-right:15px;
-
-}
-
-
-.header {
-
-display:flex;
-
-align-items:center;
-
-justify-content:space-between;
-
-}
-
-
-
-@media(max-width:700px){
-
-#languageBtn {
-
-width:auto;
-
-margin-right:0;
-
-}
+    }
 
 
 }
-/* ===================================
-   Private Login Screen
-=================================== */
 
 
-#loginScreen {
-
-position:fixed;
-
-inset:0;
-
-background:#000;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-z-index:9999;
-
-}
-
-
-
-.login-box {
-
-width:350px;
-
-padding:40px;
-
-background:
-
-rgba(255,255,255,.08);
-
-border:
-
-1px solid rgba(255,255,255,.2);
-
-border-radius:25px;
-
-backdrop-filter:blur(20px);
-
-text-align:center;
-
-}
-
-
-
-.login-logo {
-
-width:70px;
-
-height:70px;
-
-margin:auto;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-border-radius:50%;
-
-font-size:40px;
-
-font-weight:800;
-
-color:white;
-
-background:
-
-linear-gradient(
-135deg,
-#ffb700,
-#ff7a00
-);
-
-}
-
-
-
-.login-box h1 {
-
-margin-top:20px;
-
-}
-
-
-
-.login-box p {
-
-color:#aaa;
-
-margin-bottom:25px;
-
-}
-
-
-
-.login-box input {
-
-width:100%;
-
-padding:15px;
-
-margin-bottom:15px;
-
-border-radius:12px;
-
-border:none;
-
-outline:none;
-
-background:#111;
-
-color:white;
-
-font-size:16px;
-
-}
-
-
-
-#loginMessage {
-
-margin-top:15px;
-
-color:#ff5555;
-
-}
-
-
-
-body.logged-in #loginScreen {
-
-display:none;
-
-}
-/* ===================================
-   Private Login Overlay
-=================================== */
-
-
-#loginScreen {
-
-position:fixed;
-
-top:0;
-left:0;
-
-width:100%;
-height:100%;
-
-background:#000;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-z-index:99999;
-
-}
-
-
-
-.login-box {
-
-width:350px;
-
-padding:35px;
-
-border-radius:25px;
-
-text-align:center;
-
-background:rgba(255,255,255,.08);
-
-border:1px solid rgba(255,255,255,.2);
-
-backdrop-filter:blur(20px);
-
-}
-
-
-
-.login-logo {
-
-width:70px;
-
-height:70px;
-
-margin:auto;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-border-radius:50%;
-
-font-size:40px;
-
-font-weight:800;
-
-background:linear-gradient(
-135deg,
-#ffb700,
-#ff7a00
-);
-
-}
-
-
-
-.login-box h1 {
-
-margin-top:20px;
-
-color:white;
-
-}
-
-
-
-.login-box p {
-
-color:#aaa;
-
-}
-
-
-
-.login-box input {
-
-width:100%;
-
-padding:15px;
-
-margin:10px 0;
-
-border:none;
-
-border-radius:12px;
-
-background:#111;
-
-color:white;
-
-}
-
-
-
-#loginMessage {
-
-color:#ff5555;
-
-}
-
-
-
-body.logged-in #loginScreen {
-
-display:none;
-
-}

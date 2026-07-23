@@ -587,6 +587,11 @@ body.logged-in .dashboard {
 
 .card {
 
+    min-width:0;
+
+    overflow:hidden;
+
+}
     padding:30px;
 
     border-radius:25px;

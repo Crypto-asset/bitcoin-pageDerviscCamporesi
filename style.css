@@ -1,96 +1,125 @@
-/* ===================================
+ /* ===================================
    Bitcoin Vault Dashboard
    Clean Style Sheet - Part 1
 =================================== */
+
 
 /* ================================
    Reset
 ================================ */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
 }
+
 
 html {
-    scroll-behavior: smooth;
+
+    scroll-behavior:smooth;
+
 }
 
+
+
+/* ================================
+   Body
+================================ */
 
 body {
 
-    min-height: 100vh;
+    min-height:100vh;
 
-    font-family: "Inter", sans-serif;
+    font-family:"Inter", Arial, sans-serif;
 
-    color: white;
+    color:white;
 
-    overflow-x: hidden;
+    overflow-x:hidden;
 
-    padding: 30px;
+    padding:30px;
 
     background:
+
     radial-gradient(
         circle at top left,
         #203a63,
         transparent 40%
-   &nbsp￼,
+    ),
+
     radial-gradient(
         circle at bottom right,
         #5a3000,
         transparent 35%
-   &nbsp￼,
+    ),
+
     #050505;
 
-    animation: pageEntrance 1s ease;
+    animation:
+    pageEntrance 1s ease;
 
 }
+
 
 
 @keyframes pageEntrance {
 
     from {
-        opacity: 0;
-        transform: translateY(20px);
+
+        opacity:0;
+
+        transform:
+        translateY(20px);
+
     }
 
+
     to {
-        opacity: 1;
-        transform: translateY(0);
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+
     }
 
 }
 
 
+
 /* ================================
-   Particles
+   Particle Background
 ================================ */
 
 #particles {
 
-    position: fixed;
+    position:fixed;
 
-    inset: 0;
+    inset:0;
 
-    overflow: hidden;
+    overflow:hidden;
 
-    z-index: -1;
+    z-index:-1;
 
 }
 
 
+
 .particle {
 
-    position: absolute;
+    position:absolute;
 
-    width: 4px;
+    width:4px;
 
-    height: 4px;
+    height:4px;
 
-    background: #ffb700;
+    background:#ffb700;
 
-    border-radius: 50%;
+    border-radius:50%;
 
     animation:
     particleMove linear infinite;
@@ -98,17 +127,27 @@ body {
 }
 
 
+
 @keyframes particleMove {
 
+
     from {
-        transform: translateY(100vh);
+
+        transform:
+        translateY(100vh);
+
     }
 
+
     to {
-        transform: translateY(-10vh);
+
+        transform:
+        translateY(-10vh);
+
     }
 
 }
+
 
 
 /* ================================
@@ -118,19 +157,19 @@ body {
 
 #loginScreen {
 
-    position: fixed;
+    position:fixed;
 
-    inset: 0;
+    inset:0;
 
-    background: #000;
+    background:#000;
 
-    display: flex;
+    display:flex;
 
-    justify-content: center;
+    justify-content:center;
 
-    align-items: center;
+    align-items:center;
 
-    z-index: 99999;
+    z-index:99999;
 
 }
 
@@ -138,13 +177,13 @@ body {
 
 .login-box {
 
-    width: 350px;
+    width:350px;
 
-    padding: 40px;
+    padding:40px;
 
-    text-align: center;
+    text-align:center;
 
-    border-radius: 25px;
+    border-radius:25px;
 
     background:
     rgba(255,255,255,.08);
@@ -152,7 +191,8 @@ body {
     border:
     1px solid rgba(255,255,255,.2);
 
-    backdrop-filter: blur(20px);
+    backdrop-filter:
+    blur(20px);
 
 }
 
@@ -160,11 +200,11 @@ body {
 
 .login-logo {
 
-    width: 70px;
+    width:70px;
 
-    height: 70px;
+    height:70px;
 
-    margin: auto;
+    margin:auto;
 
     display:flex;
 
@@ -178,12 +218,17 @@ body {
 
     font-weight:800;
 
+    color:#111;
+
     background:
     linear-gradient(
         135deg,
         #ffb700,
         #ff7a00
-   &nbsp￼;
+    );
+
+    box-shadow:
+    0 0 40px rgba(255,183,0,.5);
 
 }
 
@@ -193,16 +238,20 @@ body {
 
     margin-top:20px;
 
+    font-size:28px;
+
 }
+
 
 
 .login-box p {
 
     color:#aaa;
 
-    margin-bottom:20px;
+    margin:15px 0 20px;
 
 }
+
 
 
 .login-box input {
@@ -228,11 +277,28 @@ body {
 }
 
 
+
 #loginMessage {
 
     color:#ff5555;
 
+    margin-top:10px;
+
 }
+
+
+
+/* ================================
+   Login State
+================================ */
+
+
+.dashboard {
+
+    display:none;
+
+}
+
 
 
 body.logged-in #loginScreen {
@@ -243,8 +309,16 @@ body.logged-in #loginScreen {
 
 
 
+body.logged-in .dashboard {
+
+    display:block;
+
+}
+
+
+
 /* ================================
-   Dashboard
+   Dashboard Container
 ================================ */
 
 
@@ -259,6 +333,7 @@ body.logged-in #loginScreen {
 }
 
 
+
 /* ================================
    Header
 ================================ */
@@ -268,7 +343,7 @@ body.logged-in #loginScreen {
 
     display:flex;
 
-    justify-content￼pace-between;
+    justify-content:space-between;
 
     align-items:center;
 
@@ -279,12 +354,16 @@ body.logged-in #loginScreen {
     border-radius:25px;
 
     background:
+
     rgba(255,255,255,.08);
 
     border:
+
     1px solid rgba(255,255,255,.15);
 
-    backdrop-filter:blur(25px);
+    backdrop-filter:
+
+    blur(25px);
 
 }
 
@@ -320,14 +399,18 @@ body.logged-in #loginScreen {
 
     font-weight:800;
 
+    color:#111;
+
     background:
+
     linear-gradient(
         135deg,
         #ffb700,
         #ff7a00
-   &nbsp￼;
+    );
 
     box-shadow:
+
     0 0 40px rgba(255,183,0,.5);
 
 }
@@ -341,11 +424,13 @@ body.logged-in #loginScreen {
 }
 
 
+
 .header p {
 
     color:#aaa;
 
 }
+
 
 
 /* ================================
@@ -364,6 +449,7 @@ body.logged-in #loginScreen {
 }
 
 
+
 /* ================================
    Buttons
 ================================ */
@@ -377,7 +463,7 @@ body.logged-in #loginScreen {
 
     border-radius:14px;
 
-    cursor￼ointer;
+    cursor:pointer;
 
     font-weight:700;
 
@@ -386,9 +472,11 @@ body.logged-in #loginScreen {
 }
 
 
+
 .btn:hover {
 
-    transform:translateY(-4px);
+    transform:
+    translateY(-4px);
 
 }
 
@@ -399,11 +487,12 @@ body.logged-in #loginScreen {
     color:white;
 
     background:
+
     linear-gradient(
         135deg,
         #ffb700,
         #ff7a00
-   &nbsp￼;
+    );
 
 }
 
@@ -414,9 +503,11 @@ body.logged-in #loginScreen {
     color:white;
 
     background:
+
     rgba(255,255,255,.12);
 
     border:
+
     1px solid rgba(255,255,255,.2);
 
 }
@@ -443,9 +534,11 @@ body.logged-in #loginScreen {
     border-radius:50px;
 
     background:
+
     rgba(0,255,140,.12);
 
     border:
+
     1px solid rgba(0,255,140,.3);
 
     color:#00ff8c;
@@ -453,6 +546,7 @@ body.logged-in #loginScreen {
     font-weight:600;
 
 }
+
 
 
 .status-dot {
@@ -466,21 +560,23 @@ body.logged-in #loginScreen {
     border-radius:50%;
 
     box-shadow:
+
     0 0 15px #00ff8c;
 
 }
+
 
 
 /* ================================
    Cards
 ================================ */
 
-
 .cards {
 
     display:grid;
 
     grid-template-columns:
+
     repeat(auto-fit,minmax(280px,1fr));
 
     gap:25px;
@@ -496,16 +592,21 @@ body.logged-in #loginScreen {
     border-radius:25px;
 
     background:
+
     rgba(255,255,255,.08);
 
     border:
+
     1px solid rgba(255,255,255,.15);
 
-    backdrop-filter:blur(25px);
+    backdrop-filter:
+
+    blur(25px);
 
     transition:.35s;
 
     animation:
+
     cardEntrance .8s ease forwards;
 
 }
@@ -515,12 +616,15 @@ body.logged-in #loginScreen {
 .card:hover {
 
     transform:
+
     translateY(-10px);
 
     box-shadow:
+
     0 25px 60px rgba(255,183,0,.25);
 
     border-color:
+
     rgba(255,183,0,.5);
 
 }
@@ -534,6 +638,7 @@ body.logged-in #loginScreen {
         opacity:0;
 
         transform:
+
         translateY(40px);
 
     }
@@ -544,6 +649,7 @@ body.logged-in #loginScreen {
         opacity:1;
 
         transform:
+
         translateY(0);
 
     }
@@ -555,7 +661,6 @@ body.logged-in #loginScreen {
 /* ================================
    Balance
 ================================ */
-
 
 .balance-title {
 
@@ -578,9 +683,12 @@ body.logged-in #loginScreen {
 }
 
 
+
 .currency {
 
     font-size:18px;
+
+    color:#ddd;
 
 }
 
@@ -595,7 +703,9 @@ body.logged-in #loginScreen {
 }
 
 
+
 #btcBalance,
+
 #ethBalance {
 
     color:#ffb700;
@@ -605,8 +715,9 @@ body.logged-in #loginScreen {
 }
 
 
+
 /* ================================
-   Owner
+   Owner Card
 ================================ */
 
 
@@ -625,7 +736,7 @@ body.logged-in #loginScreen {
 
 
 /* ================================
-   Wallet
+   Wallet Information
 ================================ */
 
 
@@ -638,6 +749,7 @@ body.logged-in #loginScreen {
     border-radius:12px;
 
     background:
+
     rgba(0,0,0,.35);
 
     color:#ddd;
@@ -665,11 +777,12 @@ body.logged-in #loginScreen {
 .btn-whatsapp {
 
     background:
+
     linear-gradient(
         135deg,
         #25D366,
         #128C7E
-   &nbsp￼;
+    );
 
     color:white;
 
@@ -682,6 +795,7 @@ body.logged-in #loginScreen {
     align-items:center;
 
 }
+
 
 
 /* ================================
@@ -715,11 +829,12 @@ body.logged-in #loginScreen {
 
     display:flex;
 
-    justify-content￼pace-between;
+    justify-content:space-between;
 
     padding-bottom:12px;
 
     border-bottom:
+
     1px solid rgba(255,255,255,.1);
 
 }
@@ -744,14 +859,14 @@ body.logged-in #loginScreen {
 
 .security {
 
-    color:#00ff8c!important;
+    color:#00ff8c !important;
 
 }
 
 
 
 /* ================================
-   Chart
+   Portfolio Allocation Chart
 ================================ */
 
 
@@ -760,11 +875,14 @@ body.logged-in #loginScreen {
     height:35px;
 
     background:
+
     rgba(255,255,255,.1);
 
     border-radius:50px;
 
     overflow:hidden;
+
+    display:flex;
 
 }
 
@@ -782,12 +900,15 @@ body.logged-in #loginScreen {
 
     font-weight:700;
 
+    color:#111;
+
     background:
+
     linear-gradient(
         90deg,
         #ffb700,
         #ff7a00
-   &nbsp￼;
+    );
 
 }
 
@@ -805,21 +926,26 @@ body.logged-in #loginScreen {
 
     font-weight:700;
 
+    color:white;
+
     background:
+
     linear-gradient(
         90deg,
         #627eea,
         #3c4fe0
-   &nbsp￼;
+    );
 
 }
-
+/* ===================================
+   Bitcoin Vault Dashboard
+   Clean Style Sheet - Part 3
+=================================== */
 
 
 /* ================================
-   Toast
+   Toast Notification
 ================================ */
-
 
 .toast {
 
@@ -830,6 +956,7 @@ body.logged-in #loginScreen {
     left:50%;
 
     transform:
+
     translateX(-50%)
     translateY(100px);
 
@@ -840,9 +967,20 @@ body.logged-in #loginScreen {
     border-radius:50px;
 
     background:
+
     rgba(20,20,20,.95);
 
+    color:white;
+
+    font-weight:600;
+
+    border:
+
+    1px solid rgba(255,255,255,.15);
+
     transition:.4s;
+
+    z-index:9999;
 
 }
 
@@ -853,6 +991,7 @@ body.logged-in #loginScreen {
     opacity:1;
 
     transform:
+
     translateX(-50%)
     translateY(0);
 
@@ -889,18 +1028,25 @@ body.logged-in #loginScreen {
 
     font-weight:800;
 
+    color:#111;
+
     background:
+
     linear-gradient(
         135deg,
         #ffb700,
         #ff7a00
-   &nbsp￼;
+    );
 
     box-shadow:
+
     0 0 50px rgba(255,183,0,.6);
 
     animation:
+
     floatBitcoin 4s infinite;
+
+    z-index:10;
 
 }
 
@@ -908,12 +1054,15 @@ body.logged-in #loginScreen {
 
 @keyframes floatBitcoin {
 
+
     50% {
 
         transform:
+
         translateY(-20px);
 
     }
+
 
 }
 
@@ -937,6 +1086,7 @@ body.logged-in #loginScreen {
     font-size:14px;
 
     border-top:
+
     1px solid rgba(255,255,255,.1);
 
 }
@@ -944,7 +1094,22 @@ body.logged-in #loginScreen {
 
 
 /* ================================
-   Mobile
+   Smooth Ready Animation
+================================ */
+
+
+body.ready .card {
+
+    animation:
+
+    cardEntrance .8s ease forwards;
+
+}
+
+
+
+/* ================================
+   Mobile Responsive
 ================================ */
 
 
@@ -958,6 +1123,17 @@ body.logged-in #loginScreen {
     }
 
 
+
+    .login-box {
+
+        width:90%;
+
+        padding:30px;
+
+    }
+
+
+
     .header {
 
         flex-direction:column;
@@ -969,13 +1145,27 @@ body.logged-in #loginScreen {
     }
 
 
+
     .header-actions {
 
         flex-direction:column;
 
         align-items:flex-start;
 
+        width:100%;
+
     }
+
+
+
+    .status {
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
 
 
     .balance {
@@ -985,6 +1175,17 @@ body.logged-in #loginScreen {
     }
 
 
+
+    .cards {
+
+        grid-template-columns:
+
+        1fr;
+
+    }
+
+
+
     .buttons {
 
         flex-direction:column;
@@ -992,11 +1193,13 @@ body.logged-in #loginScreen {
     }
 
 
+
     .btn {
 
         width:100%;
 
     }
+
 
 
     .floating-bitcoin {
@@ -1015,5 +1218,3 @@ body.logged-in #loginScreen {
 
 
 }
-
-

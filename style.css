@@ -674,11 +674,17 @@ body.logged-in .dashboard {
 
 .balance {
 
-    font-size:55px;
+    font-size:clamp(28px, 5vw, 55px);
 
     font-weight:800;
 
     color:#ffb700;
+
+    line-height:1.15;
+
+    word-break:break-word;
+
+    overflow-wrap:break-word;
 
 }
 

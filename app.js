@@ -168,17 +168,15 @@ async function updatePortfolio() {
         const totalEUR =
             totalUSD * usdToEUR;
 
-        if (walletValue) {
+    if (walletValue) {
 
-          walletValue.textContent =
-    "$" +
-    totalUSD.toLocaleString("en-US", {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-    });
-                );
+    walletValue.textContent =
+        "$" + totalUSD.toLocaleString("en-US", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
 
-        }
+}
 
         if (eurValue) {
 

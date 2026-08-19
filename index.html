@@ -657,7 +657,38 @@ Security Score
 
 
 <h2>
+<section class="card live-chart-card">
 
+    <h2>
+        <span data-en="Live Crypto Market"
+              data-it="Mercato Crypto in Tempo Reale">
+            Live Crypto Market
+        </span>
+    </h2>
+
+    <div class="market-info">
+
+        <div class="market-item btc-market">
+            <span>₿ Bitcoin</span>
+            <strong id="chartBtcPrice">Loading...</strong>
+        </div>
+
+        <div class="market-item eth-market">
+            <span>♦ Ethereum</span>
+            <strong id="chartEthPrice">Loading...</strong>
+        </div>
+
+    </div>
+
+    <div class="live-chart-wrapper">
+        <canvas id="cryptoChart"></canvas>
+    </div>
+
+    <p class="chart-update">
+        Live prices • Updates every 30 seconds
+    </p>
+
+</section>
 
 <span data-en="Portfolio Allocation"
 data-it="Allocazione Portafoglio">

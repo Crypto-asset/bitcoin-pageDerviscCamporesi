@@ -4,6 +4,15 @@
 
 .live-chart-card {
     grid-column: 1 / -1;
+    width: 100%;
+    min-height: 520px;
+}
+
+.live-chart-wrapper {
+    position: relative;
+    width: 100%;
+    height: 420px;
+}
 }
 
 .market-info {

@@ -67,7 +67,240 @@ const eurValue =
 /* ================================
    Live Portfolio Update
 ================================ */
+/* ================================
+   Live BTC / ETH Chart
+================================ */
 
+const chartCanvas =
+    document.querySelector("#cryptoChart");
+
+const chartBtcPrice =
+    document.querySelector("#chartBtcPrice");
+
+const chartEthPrice =
+    document.querySelector("#chartEthPrice");
+
+let cryptoChart = null;
+
+const chartLabels = [];
+const btcHistory = [];
+const ethHistory = [];
+
+
+/* ================================
+   Create Chart
+================================ */
+
+if (chartCanvas && typeof Chart !== "undefined") {
+
+    const ctx = chartCanvas.getContext("2d");
+
+    cryptoChart = new Chart(ctx, {
+
+        type: "line",
+
+        data: {
+
+            labels: chartLabels,
+
+            datasets: [
+
+                {
+                    label: "Bitcoin",
+
+                    data: btcHistory,
+
+                    borderColor: "#ffb700",
+
+                    backgroundColor:
+                        "rgba(255,183,0,.12)",
+
+                    borderWidth: 3,
+
+                    tension: 0.35,
+
+                    pointRadius: 2,
+
+                    pointHoverRadius: 5,
+
+                    fill: true
+                },
+
+                {
+                    label: "Ethereum",
+
+                    data: ethHistory,
+
+                    borderColor: "#627eea",
+
+                    backgroundColor:
+                        "rgba(98,126,234,.10)",
+
+                    borderWidth: 3,
+
+                    tension: 0.35,
+
+                    pointRadius: 2,
+
+                    pointHoverRadius: 5,
+
+                    fill: true
+                }
+
+            ]
+
+        },
+
+        options: {
+
+            responsive: true,
+
+            maintainAspectRatio: false,
+
+            animation: {
+                duration: 500
+            },
+
+            interaction: {
+                mode: "index",
+                intersect: false
+            },
+
+            plugins: {
+
+                legend: {
+                    labels: {
+                        color: "#ffffff"
+                    }
+                }
+
+            },
+
+            scales: {
+
+                x: {
+
+                    ticks: {
+                        color: "#888"
+                    },
+
+                    grid: {
+                        color:
+                            "rgba(255,255,255,.06)"
+                    }
+
+                },
+
+                y: {
+
+                    ticks: {
+
+                        color: "#888",
+
+                        callback: function(value) {
+
+                            return "$" +
+                                Number(value)
+                                .toLocaleString();
+
+                        }
+
+                    },
+
+                    grid: {
+                        color:
+                            "rgba(255,255,255,.06)"
+                    }
+
+                }
+
+            }
+
+        }
+
+    });
+
+}
+
+
+/* ================================
+   Add Chart Data
+================================ */
+
+function addChartData(btcUSD, ethUSD) {
+
+    if (!cryptoChart) return;
+
+    const time =
+        new Date().toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit"
+        });
+
+    chartLabels.push(time);
+
+    btcHistory.push(btcUSD);
+
+    ethHistory.push(ethUSD);
+
+
+    /*
+       Keep the latest 30 readings
+    */
+
+    if (chartLabels.length > 30) {
+
+        chartLabels.shift();
+
+        btcHistory.shift();
+
+        ethHistory.shift();
+
+    }
+
+
+    cryptoChart.update();
+
+}
+
+
+/* ================================
+   Chart Price Display
+================================ */
+
+function updateChartPrices(btcUSD, ethUSD) {
+
+    if (chartBtcPrice) {
+
+        chartBtcPrice.textContent =
+            "$" +
+            btcUSD.toLocaleString(
+                "en-US",
+                {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
+                }
+            );
+
+    }
+
+
+    if (chartEthPrice) {
+
+        chartEthPrice.textContent =
+            "$" +
+            ethUSD.toLocaleString(
+                "en-US",
+                {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
+                }
+            );
+
+    }
+
+}
 async function updatePortfolio() {
 
     try {
@@ -124,7 +357,15 @@ async function updatePortfolio() {
             Number(
                 ethData.result.XETHZUSD.c[0]
             );
+updateChartPrices(
+    btcUSD,
+    ethUSD
+);
 
+addChartData(
+    btcUSD,
+    ethUSD
+);
         if (ethPrice) {
 
             ethPrice.textContent =

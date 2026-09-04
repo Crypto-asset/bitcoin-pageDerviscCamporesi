@@ -1319,3 +1319,82 @@ body.ready .card {
 
 
 }
+.account-notice {
+    max-width: 1100px;
+    margin: 0 auto 25px;
+    border: 1px solid #b1b4b6;
+    background: #ffffff;
+    color: #0b0c0c;
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.notice-header {
+    padding: 14px 20px;
+    background: #f3f2f1;
+    border-bottom: 1px solid #b1b4b6;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.notice-body {
+    padding: 22px;
+}
+
+.notice-body h3 {
+    margin: 0 0 12px;
+    font-size: 21px;
+}
+
+.notice-body p {
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+.notice-details {
+    display: flex;
+    gap: 35px;
+    margin: 22px 0;
+    padding: 15px 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.notice-details div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.notice-details span {
+    font-size: 12px;
+    color: #505a5f;
+    text-transform: uppercase;
+}
+
+.notice-details strong {
+    font-size: 15px;
+}
+
+.restricted {
+    color: #d4351c;
+}
+
+.example-label {
+    font-size: 11px !important;
+    color: #6f777b;
+    margin-top: 15px !important;
+}
+
+@media (max-width: 600px) {
+
+    .notice-details {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .notice-body {
+        padding: 17px;
+    }
+}
